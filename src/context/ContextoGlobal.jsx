@@ -88,7 +88,6 @@ export const ContextoGlobal = createContext()
 export function ContextoGlobalProvider ({children}){
     
     const [contadorGlobal, setContadorGlobal] = useState(0)
-    const [puntuacion, setPuntuacion] = useState(0)
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const [timeLeft, setTimeLeft] = useState(20)
     const [juego, setJuego] = useState(false)
