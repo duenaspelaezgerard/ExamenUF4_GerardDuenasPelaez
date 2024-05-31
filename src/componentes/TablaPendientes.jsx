@@ -32,7 +32,7 @@ export default function TablaPendientes() {
             const response = await fetch(`https://json-server-examen-gdp.vercel.app/ticketsPendientes/${id}`, { method: 'DELETE' })
 
             if (!response.ok) {
-                throw new Error('Error al borrar ');
+                throw new Error('Error al borrar');
             }
                 
             setPendientes(prevdades => prevdades.filter(dato => dato.id !== id));
@@ -40,8 +40,6 @@ export default function TablaPendientes() {
         } catch (error) {
             console.error('Error fetching data:', error);
         }
-
-        
     }
     
     return (
