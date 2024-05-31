@@ -25,8 +25,6 @@ export default function TablaResueltos() {
     }, [])
 
     async function borrarTicket(id) {
-        console.log('codigo/id', id);
-
         try {
             const response = await fetch(`https://json-server-examen-gdp.vercel.app/ticketsResueltos/${id}`, { method: 'DELETE' })
 
