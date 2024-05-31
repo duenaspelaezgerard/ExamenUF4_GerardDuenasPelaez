@@ -1,22 +1,22 @@
-import './App.css';
-import { GlobalContextProvider } from './context/GlobalContext';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Header } from './componentes/Header';
-import { Route, Routes } from 'react-router-dom';
-import VistaRegistro from './views/VistaRegistro.jsx';
-import VistaLogin from './views/VistaLogin.jsx';
-import VistaPanel from './views/VistaPanel.jsx';
 
-export default function App() {
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from "./componentes/Header"
+import VistaPanel from './views/VistaPanel';
+import VistaLogin from './views/VistaLogin';
+import VistaRegistro from './views/VistaRegistro';
+
+function App() {
 
   return (
-    <GlobalContextProvider>
+    <Router>
       <Header></Header>
       <Routes>
-        <Route path='/registro' element={<VistaRegistro/>}/>
-        <Route path='/login' element={<VistaLogin/>}/>
-        <Route path='/panel' element={<VistaPanel/>}/>
+        <Route path="/panel" element={<VistaPanel />} />
+        <Route path="/login" element={<VistaLogin />} />
+        <Route path="/registro" element={<VistaRegistro />} />
       </Routes>
-    </GlobalContextProvider>
-  );
+    </Router>
+  )
 }
+
+export default App
