@@ -4,6 +4,7 @@ import Header from "./componentes/Header"
 import VistaPanel from './views/VistaPanel';
 import VistaLogin from './views/VistaLogin';
 import VistaRegistro from './views/VistaRegistro';
+import VistaNouTicket from './views/VistaNouTicket';
 
 function App() {
 
@@ -11,9 +12,10 @@ function App() {
     <Router>
       <Header></Header>
       <Routes>
-        <Route path="/panel" element={<VistaPanel />} />
+        <Route path="/" element={<VistaPanel />} />
         <Route path="/login" element={<VistaLogin />} />
         <Route path="/registro" element={<VistaRegistro />} />
+        <Route path="/nuevo" element={<VistaNouTicket />} />
       </Routes>
     </Router>
   )

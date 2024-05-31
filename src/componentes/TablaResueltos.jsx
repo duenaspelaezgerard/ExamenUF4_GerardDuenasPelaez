@@ -25,6 +25,7 @@ export default function TablaResueltos() {
     }, [])
 
     async function borrarTicket(id) {
+        console.log('id: ', id)
         try {
             const response = await fetch(`https://json-server-examen-gdp.vercel.app/ticketsResueltos/${id}`, { method: 'DELETE' })
 
@@ -32,7 +33,7 @@ export default function TablaResueltos() {
                 throw new Error('Error al borrar');
             }
                 
-            setPendientes(prevdades => prevdades.filter(dato => dato.id !== id));
+            setResueltos(prevdades => prevdades.filter(dato => dato.id !== id));
 
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -74,7 +75,7 @@ export default function TablaResueltos() {
                                     <i className="bi bi-chat-left-text"></i>
                                 </button>
                             </td>
-                            <td onClick={() => borrarTicket(resuelto.codigo)}>
+                            <td onClick={() => borrarTicket(resuelto.id)}>
                                 <button className="btn btn-danger" title="Eliminar ticket">
                                     <i className="bi bi-trash3"></i>
                                 </button>

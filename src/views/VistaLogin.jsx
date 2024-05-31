@@ -6,7 +6,7 @@ export default function VistaLogin() {
                 <h1 className="text-center mt-3 mb-5">Iniciar Sesión</h1>
                 <div className="card">
                     <div className="card-body">
-                    <form action="proyectos.html">
+                    <form action="">
                         <div className="mb-3">
                         <label for="InputEmail1" className="form-label">Email:</label>
                         <input id="email" type="text" className="form-control" aria-describedby="emailHelp" />
