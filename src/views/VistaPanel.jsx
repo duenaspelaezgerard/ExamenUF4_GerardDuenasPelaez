@@ -6,7 +6,7 @@ export default function VistaPanel() {
     return (
         <div className="container mt-5">
             <h1>Administración de incidencias</h1>
-
+            
             <TablaPendientes />            
             <TablaResueltos />            
         </div>

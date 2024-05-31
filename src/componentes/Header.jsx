@@ -17,8 +17,13 @@ export default function Header () {
             </Link>
           </li>
           <li className="">
-            <Link to="/panel" className="nav-link text-light font-weight-bold shadow-sm px-3 py-2">
+            <Link to="/" className="nav-link text-light font-weight-bold shadow-sm px-3 py-2">
               Panel
+            </Link>
+          </li>
+          <li className="">
+            <Link to="/nuevo" className="nav-link text-light font-weight-bold shadow-sm px-3 py-2">
+              Nuevo Ticket
             </Link>
           </li>
         </ul>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
 export default function TablaPendientes() {
     const [ pendientes, setPendientes] = useState([])
@@ -39,8 +40,10 @@ export default function TablaPendientes() {
         } catch (error) {
             console.error('Error fetching data:', error);
         }
-    }
 
+        
+    }
+    
     return (
         <>
             <h2 className="mt-5">Tickets pendientes</h2>
@@ -84,7 +87,7 @@ export default function TablaPendientes() {
                                     <i className="bi bi-chat-left-text"></i>
                                 </button>
                             </td>
-                            <td onClick={() => borrarTicket(pendiente.codigo)}>
+                            <td onClick={() => borrarTicket(pendiente.id)}>
                                 <button className="btn btn-danger" title="Eliminar ticket">
                                     <i className="bi bi-trash3"></i>
                                 </button>
