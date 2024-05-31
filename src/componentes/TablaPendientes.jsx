@@ -12,8 +12,10 @@ export default function TablaPendientes() {
                 const data = await Promise.all(response)
                 console.log('pendientes', data);
 
-                if (Array.isArray(data)) {
-                    setPendientes(data);
+                const ticketPendientes = data.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+    
+                if (Array.isArray(ticketPendientes)) {
+                    setPendientes(ticketPendientes);
                 } else {
                     console.error('Data is not an array:', data);
                 }

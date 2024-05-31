@@ -10,8 +10,10 @@ export default function TablaResueltos() {
                 const data = await Promise.all(response)
                 console.log('resueltos', data);
 
-                if (Array.isArray(data)) {
-                    setResueltos(data);
+                const ticketResuelto = data.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+    
+                if (Array.isArray(ticketResuelto)) {
+                    setResueltos(ticketResuelto);
                 } else {
                     console.error('Data is not an array:', data);
                 }
