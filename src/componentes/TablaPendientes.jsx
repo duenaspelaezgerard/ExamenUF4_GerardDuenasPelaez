@@ -4,6 +4,7 @@ export default function TablaPendientes() {
     const [ pendientes, setPendientes] = useState([])
     
     useEffect(() => {
+
         const obtenerTicketPendiente = async () => {
             try {
                 const response = await fetch('https://json-server-examen-gdp.vercel.app/ticketsPendientes', { method: 'GET' }).then(res => res.json())
@@ -22,9 +23,23 @@ export default function TablaPendientes() {
         }
 
         obtenerTicketPendiente()
+
     }, [])
 
-   
+    async function borrarTicket(id) {
+        try {
+            const response = await fetch(`https://json-server-examen-gdp.vercel.app/ticketsPendientes/${id}`, { method: 'DELETE' })
+
+            if (!response.ok) {
+                throw new Error('Error al borrar ');
+            }
+                
+            setPendientes(prevdades => prevdades.filter(dato => dato.id !== id));
+
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
 
     return (
         <>
