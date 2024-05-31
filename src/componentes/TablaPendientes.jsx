@@ -40,6 +40,8 @@ export default function TablaPendientes() {
         } catch (error) {
             console.error('Error fetching data:', error);
         }
+
+        
     }
     
     return (
