@@ -1,3 +1,6 @@
+
+import { useState, useContext, createContext } from "react";
+
 const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
@@ -7,13 +10,10 @@ export const GlobalProvider = ({ children }) => {
         <GlobalContext.Provider value={{ dades, setDades }}> 
             {children}
         </GlobalContext.Provider>
-
     )    
 }
 
 export const useGlobalContext = () => {
     return useContext(GlobalContext);
 }
-    );
-};
 
