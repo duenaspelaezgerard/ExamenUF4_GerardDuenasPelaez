@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export function Header () {
+export default function Header () {
   return (
     <header className="bg-primary">
       <div className="">         
@@ -26,5 +26,3 @@ export function Header () {
     </header>
   )
 }
-
-
